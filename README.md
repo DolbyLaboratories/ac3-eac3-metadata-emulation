@@ -48,7 +48,7 @@ The switches are designed to operate in a similar way to legacy command line enc
 
 # Testing
 
-SATS is required to be installed. This is available at 
+SATS is required to be installed. This is available at https://github.com/DolbyLaboratories/SATS-software-audio-test-suite
 
 The provided bash script test_drc.sh compares the drc graphs of the built executable with reference DRC graphs. A simple
 pass fail is output on stdout. The script will create a build if required.
