@@ -1,0 +1,13 @@
+[ipp_library.linker_ms_link]
+@att INCLUDE += '$(IPPROOT)\\include'
+@add ipp_lib_path
+# Use unthreaded libraries with simple static linkage
+@att VS_LIBRARIES += 'ippac_l.lib'
+@att VS_LIBRARIES += 'ipps_l.lib'
+@att VS_LIBRARIES += 'ippcore_l.lib'
+
+[ipp_lib_path.linker_ms_link.processor_x86]
+@att VS_LIBRARY_DIRECTORIES += '$(IPPROOT)\\lib\\ia32'
+
+[ipp_lib_path.linker_ms_link.processor_amd64]
+@att VS_LIBRARY_DIRECTORIES += '$(IPPROOT)\\lib\\intel64'

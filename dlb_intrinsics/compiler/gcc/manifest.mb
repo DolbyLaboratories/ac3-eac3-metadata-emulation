@@ -1,0 +1,19 @@
+[ipp_compiler_options.compiler_gcc]
+@att MAKE_CFLAGS += -msse3
+@att MAKE_CCDEPFLAGS += -msse3
+
+[ipp_library.linker_gcc]
+@att INCLUDE += '${IPPROOT}/include'
+@add ipp_lib_path
+# Use unthreaded libraries with simple static linkage
+@att MAKE_LDLIBS += '-lippac_l -lipps_l -lippcore_l'
+
+[ipp_lib_path.linker_gcc.(os_linux+os_windows).processor_x86]
+@att MAKE_LDFLAGS += '-L${IPPROOT}/lib/ia32'
+
+[ipp_lib_path.linker_gcc.(os_linux+os_windows).processor_amd64]
+@att MAKE_LDFLAGS += '-L${IPPROOT}/lib/intel64'
+
+# By default, IPP library files on OS X platform are universal version.
+[ipp_lib_path.linker_gcc.os_osx]
+@att MAKE_LDFLAGS += '-L${IPPROOT}/lib'
