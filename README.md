@@ -48,12 +48,14 @@ The switches are designed to operate in a similar way to legacy command line enc
 
 # Testing
 
-There is a bash test script test.sh that creates DRC plots for both line mode and RF mode.
-Once debug build is complete run using:
-``` ./test.sh ```
+SATS is required to be installed. This is available at 
 
-Plots should be created for each artistic compression profile in line mode and RF mode so 10 plots should be created as pdfs in the test/output/ folder.
+The provided bash script test_drc.sh compares the drc graphs of the built executable with reference DRC graphs. A simple
+pass fail is output on stdout. The script will create a build if required.
+
+Run using:
+``` ./test_drc.sh ```
+
 
 # Tools
-
-To support testing executables are provided to encode and decode AC3 and EC3 files. A graphplotter utility and pwr_vs_time tool from SATS are provided. The test script should run without the need for any external additional tools.
+This contains a simple graph comparison utility used by the test script.
