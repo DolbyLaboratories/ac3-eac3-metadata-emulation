@@ -5,20 +5,20 @@
 # 5.1 RF Mode
 #./test_case51.sh test/sources/6ch_Skip_51CM.wav "-p0 -s0 -a7 -dn11 -c3" "-a7 -dn11" "-k3"
 
-if [ ! -f "build_debug/MdEmu" ]; then
+if [ ! -f "build_release/MdEmu" ]; then
         echo "Executable does not exist, rebuilding"
-        if [ ! -d "build_debug" ]; then
-  			conan install . --output-folder=build_debug --build=missing -s build_type=Debug
+        if [ ! -d "build_release" ]; then
+  			conan install . --output-folder=build_release --build=missing -s build_type=Release
   		fi
-		cd build_debug
+		cd build_release
 		if [ ! -f "Makefile" ]; then
-			cmake -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug ..
+			cmake -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release ..
 		fi
 		make
 		cd ..
 fi
 
-export gc=./build_debug/graph_check
+export gc=./build_release/graph_check
 
 rm -fR test/output test/tmp
 mkdir -p test/output

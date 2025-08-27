@@ -49,8 +49,8 @@
 #define    SAMPLES_PER_BLOCK = (DLB_MD_EMUL_BLOCK_SIZE / 2)
 #define    AGG_ACMOD_71 21
 
-#define    MAJOR_VERSION 0
-#define    MINOR_VERSION 9
+#define    MAJOR_VERSION 1
+#define    MINOR_VERSION 0
 #define    FUNC_VERSION 0
 
 

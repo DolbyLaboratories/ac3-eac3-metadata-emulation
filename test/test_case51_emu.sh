@@ -2,7 +2,7 @@
 echo File: $1 Acmod: $2 Dialnorm: $3 Profile: $4 Compression Mode: $5
 export stem=`basename $1 .wav`
 
-build_debug/MdEmu -p0 -s0 -a$2 -dn$3 -k$4 -c$5 $1 test/output/$stem.emu.wav
+build_release/MdEmu -p0 -s0 -a$2 -dn$3 -k$4 -c$5 $1 test/output/$stem.emu.wav
 
 export pwt=pwr_vs_time
 
