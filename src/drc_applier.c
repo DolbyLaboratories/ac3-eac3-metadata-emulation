@@ -246,7 +246,7 @@ void apply_gain(DLB_LFRACT **audioBlockPtrs, DLB_LFRACT gainValue, DLB_LFRACT la
 */
 DLB_LFRACT compr_to_gain(int16_t compr)
 {
-    char x = ((char)(compr & 0xf0) >> 4) + 8;
+    signed char x = ((signed char)(compr & 0xf0) >> 4) + 8;
     int32_t z = (((int32_t)compr & 0x0f) + 0x10) << x;
 
     /* Normalize fractional value and allow 4 bits of headroom as max gain = 16.0 */
@@ -262,7 +262,7 @@ DLB_LFRACT compr_to_gain(int16_t compr)
 */
 DLB_LFRACT dynrng_to_gain(int16_t dynrng)
 {
-    char x = ((char)(dynrng & 0xe0) >> 5) + 4;
+    signed char x = ((signed char)(dynrng & 0xe0) >> 5) + 4;
     int32_t z = (((int32_t)dynrng & 0x1f) + 0x20) << x;
 
     /* Normalize fractional value and allow 4 bits of headroom as max gain = 16.0 */
